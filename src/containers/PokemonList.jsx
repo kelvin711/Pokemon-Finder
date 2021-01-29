@@ -4,6 +4,7 @@ import _ from "lodash";
 import {GetPokemonList} from "../actions/pokemonActions";
 import {Link} from "react-router-dom";
 import ReactPaginate from "react-paginate";
+import pokeBall from "../assets/img/pokeballicon.png";
 
 
 
@@ -53,9 +54,17 @@ const PokemonList = (props) => {
 
     return (
         <div>
-            <div className={"search-wrapper"}>        
-                <input type="text" name="search" placeholder="Pokemon name!" onChange={ event => setSearch(event.target.value)}/>
-                <button onClick={() => props.history.push(`/pokemon/${search}`)}>Search</button>
+            <div className={"search-wrapper"}>
+                <img className={"pokeball-icon"} src={pokeBall} alt="pokeBall icon"/>       
+                <input
+                className={"searchTerm"}
+                type="text" 
+                name="search" 
+                placeholder="Pokemon name!" 
+                onChange={ event => setSearch(event.target.value)}/>
+                <button 
+                className={"searchButton"} 
+                onClick={() => props.history.push(`/pokemon/${search}`)}>Search</button>
             </div>
                 {ShowData()}
                 {!_.isEmpty(pokemonList.data) && (
