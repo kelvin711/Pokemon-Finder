@@ -20,19 +20,19 @@ const ShowData = () => {
     if (!_.isEmpty(pokemonState.data[pokemonName])) {
         const pokeData = pokemonState.data[pokemonName];
         return(
-        <div className={"pokemon-wrapper"}>
-            <div className={"item"}>
+        <div className=" row">
+            <div className="col-sm-4">
                 <h1>Sprites</h1>
                 <img src={pokeData.sprites.front_default} alt=""/>
                 <img src={pokeData.sprites.back_default} alt=""/>
                 <img src={pokeData.sprites.front_shiny} alt=""/>
                 <img src={pokeData.sprites.back_shiny} alt=""/>
             </div>
-        <div className="item">
+        <div className="col-sm-4">
             <h1>Stats</h1>
             <StatsBar  pokemon={pokeData}/>
         </div>
-        <div className="item">
+        <div className="col-sm-4">
             <h1>Abilities</h1>
             {pokeData.abilities.map((el, i) => {
                 return <p key={i}>{el.ability.name}</p>
