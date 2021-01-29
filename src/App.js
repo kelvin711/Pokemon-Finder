@@ -7,10 +7,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <div className="App">
-      <nav>
-      
-        <NavLink to={"/"}>Home</NavLink>
+    <div className="container">
+
+      <nav className="text-align-center">     
+        <NavLink className="text-align-center" to={"/"}>Home</NavLink>
       </nav>
 
       

@@ -29,7 +29,7 @@ const PokemonList = (props) => {
 
         if (!_.isEmpty(pokemonList.data)) {
             return(
-                <div className={"list-wrapper"}>
+                <div className="list-wrapper">
                 {pokemonList.data.map((el, i) => {
                     let capitalName = el.name.charAt(0).toUpperCase() + el.name.slice(1)
                     return(                   
@@ -53,7 +53,7 @@ const PokemonList = (props) => {
     }
 
     return (
-        <div>
+        <div className="row">
             <div className={"search-wrapper"}>
                 <img className={"pokeball-icon"} src={pokeBall} alt="pokeBall icon"/>       
                 <input
