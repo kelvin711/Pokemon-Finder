@@ -73,3 +73,10 @@ nav a {
   justify-content: space-between;
   padding: 0;
 }
+
+input[type=text] {
+  width: 400pxpx;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+

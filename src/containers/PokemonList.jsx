@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import ReactPaginate from "react-paginate";
 
 
+
 const PokemonList = (props) => {
     const [search, setSearch] = useState("")
     const dispatch = useDispatch();
@@ -51,9 +52,8 @@ const PokemonList = (props) => {
 
     return (
         <div>
-            <div className={"search-wrapper"}>
-                <p>Search: </p>
-                <input type="text" onChange={ event => setSearch(event.target.value)}/>
+            <div className={"search-wrapper"}>        
+                <input type="text" name="search" placeholder="Pokemon name!" onChange={ event => setSearch(event.target.value)}/>
                 <button onClick={() => props.history.push(`/pokemon/${search}`)}>Search</button>
             </div>
                 {ShowData()}

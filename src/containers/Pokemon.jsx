@@ -2,6 +2,7 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {GetPokemon} from "../actions/pokemonActions";
 import _ from "lodash";
+import StatsBar from "./StatsBar";
 
 const Pokemon = (props) => {
 const pokemonName = props.match.params.pokemon;
@@ -26,9 +27,7 @@ const ShowData = () => {
             </div>
         <div className="item">
             <h1>Stats</h1>
-            {pokeData.stats.map((el, i) => {
-                return <p key={i}>{el.stat.name} {el.base_stat}</p>
-            })}
+            <StatsBar  pokemon={pokeData}/>
         </div>
         <div className="item">
             <h1>Abilities</h1>
