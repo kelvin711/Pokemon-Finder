@@ -5,6 +5,9 @@ import _ from "lodash";
 import StatsBar from "./StatsBar";
 
 const Pokemon = (props) => {
+
+const capitalName = props.match.params.pokemon.charAt(0).toUpperCase() +props.match.params.pokemon.slice(1);
+    
 const pokemonName = props.match.params.pokemon;
 const dispatch = useDispatch();
 const pokemonState = useSelector(state => state.Pokemon);
@@ -52,7 +55,7 @@ const ShowData = () => {
 
     return(
     <div className={"poke"}>
-        <h1>{pokemonName}</h1>
+        <h1>{capitalName}</h1>
         {ShowData()}
     </div>
     )

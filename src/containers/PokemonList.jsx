@@ -30,9 +30,10 @@ const PokemonList = (props) => {
             return(
                 <div className={"list-wrapper"}>
                 {pokemonList.data.map((el, i) => {
-                    return(
+                    let capitalName = el.name.charAt(0).toUpperCase() + el.name.slice(1)
+                    return(                   
                     <div className={"pokemon-item"}>
-                        <p key={i}>{el.name}</p>
+                        <p key={i}>{capitalName}</p>
                         <Link  to={`/pokemon/${el.name}`}>View</Link>
                     </div>
                     )

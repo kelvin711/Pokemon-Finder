@@ -6,10 +6,10 @@ const StatsBar = ({pokemon: { stats  }}) => {
 
     const pokemonStat = stats.map( statsObj => statsObj.base_stat)
     const pokemonStatName = stats.map( statsObj => statsObj.stat.name)
-    console.log("pokemon stat",pokemonStat)
-    console.log("pokemon stat name",pokemonStatName)
+    // console.log("pokemon stat",pokemonStat)
+    // console.log("pokemon stat name",pokemonStatName)
     // console.log("this is pokemon stats: ",stats)
-    console.log("stat 1",pokemonStat[0])
+    // console.log("stat 1",pokemonStat[0])
     return (
         <>
             
@@ -29,18 +29,22 @@ const StatsBar = ({pokemon: { stats  }}) => {
                                 'rgba(153, 102, 255, 0.2)',
                                 'rgba(255, 159, 64, 0.2)'
                             ],
+                            pointBackgroundColor: "#666",
+                            pointRadius: 3,
                         }],
                         
                         
-                }}
-                    scale={{
-                        ticks: {
-                            beginAtZero: true,
-                            max: 5,
-                            min: 0,
-                            stepSize: 1
+                }}                
+                    options={{
+                        scale: {
+                            ticks: {
+                                max: 255,
+                                min: 0,
+                                stepSize: 51
+                            }
                         }
                     }}
+                    
                     height={400}
                     width={400}
                 />
